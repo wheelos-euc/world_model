@@ -1,0 +1,12 @@
+module_config {
+    module_library : "/apollo/bazel-bin/external/wheelos_world_model+/modules/storytelling/libstorytelling_component.so"
+    timer_components {
+        class_name : "Storytelling"
+        config {
+            name: "storytelling"
+            config_file_path: "/apollo/pkgs/world_model/modules/storytelling/conf/storytelling_conf.pb.txt"
+            flag_file_path: "/apollo/conf/global_flagfile.txt"
+            interval: 100
+        }
+    }
+}

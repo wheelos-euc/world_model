@@ -1,0 +1,34 @@
+load("@rules_pkg//pkg:install.bzl", "pkg_install")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_filegroup")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files([
+    "LICENSE",
+    "README.md",
+])
+
+filegroup(
+    name = "runtime_data",
+    srcs = [
+        "//modules/lane:runtime_data",
+        "//modules/storytelling:runtime_data",
+        "//modules/traffic_light:runtime_data",
+    ],
+)
+
+pkg_filegroup(
+    name = "package_files",
+    srcs = [
+        "//modules/lane:package_files",
+        "//modules/storytelling:package_files",
+        "//modules/traffic_light:package_files",
+        "//modules/world_model:package_files",
+    ],
+)
+
+pkg_install(
+    name = "install_dir",
+    srcs = [":package_files"],
+    tags = ["manual"],
+)

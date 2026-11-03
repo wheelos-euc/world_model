@@ -1,0 +1,12 @@
+common:dev --lockfile_mode=off
+common:dev --registry=file:///apollo/pkgs/bazel-central-registry
+common:dev --override_module=wheelos_common=../common
+common:dev --override_module=wheelos_core=../core
+common:dev --override_module=wheelos_map=../map
+common:dev --override_module=wheelos_msgs=../wheelos_msgs
+common:dev --override_module=wheelos_perception=../perception
+common:dev --override_module=wheelos_planning=../planning
+common:dev --override_module=wheelos_prediction=../prediction
+common:dev --override_module=wheelos_routing=../routing
+common:dev --override_module=wheelos_simulation=../simulation
+common:dev --override_module=wheelos_transform=../transform
