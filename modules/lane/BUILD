@@ -32,7 +32,7 @@ cc_library(
     srcs = ["inference/tensorrt_executor.cc"],
     hdrs = ["inference/tensorrt_executor.h"],
     target_compatible_with = select({
-        "//:use_gpu": [],
+        "@wheelos_common//tools/platform:use_gpu": [],
         "//conditions:default": ["@platforms//:incompatible"],
     }),
     deps = [
