@@ -1,0 +1,12 @@
+module_config {
+  module_library: "lib/components/storytelling/libstorytelling_component.so"
+  timer_components {
+    class_name: "Storytelling"
+    config {
+      name: "storytelling"
+      config_file_path: "conf/storytelling/storytelling_conf.pb.txt"
+      flag_file_path: "conf/global_flagfile.txt"
+      interval: 100
+    }
+  }
+}

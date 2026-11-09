@@ -1,3 +1,4 @@
+load("@core//runtime:runtime.bzl", "runtime_module")
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 load("@rules_pkg//pkg:install.bzl", "pkg_install")
 load("@rules_pkg//pkg:mappings.bzl", "pkg_attributes", "pkg_filegroup", "pkg_files", "strip_prefix")
@@ -140,4 +141,15 @@ filegroup(
         "dag/*.dag",
         "launch/*.launch",
     ]),
+)
+
+runtime_module(
+    name = "module",
+    components = [":libstorytelling_component.so"],
+    files = {
+        "conf/storytelling_conf.pb.txt": "conf/storytelling/storytelling_conf.pb.txt",
+        "runtime/storytelling.dag": "dag/storytelling/storytelling.dag",
+        "runtime/storytelling.launch": "launch/storytelling/storytelling.launch",
+    },
+    module_name = "storytelling",
 )

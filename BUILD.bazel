@@ -11,7 +11,7 @@ exports_files([
 filegroup(
     name = "runtime_data",
     srcs = [
-        "//modules/lane:runtime_data",
+        "//modules/lane:runtime_config",
         "//modules/storytelling:runtime_data",
         "//modules/traffic_light:runtime_data",
     ],
